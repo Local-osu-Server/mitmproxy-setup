@@ -17,7 +17,7 @@ pip install mitmproxy
 ```
 
 ## Run Your Proxy Server
-Run your proxy server and then execute the command `mitmdump -s ./main.py `.
+Run your proxy server and then execute the command `mitmdump -s ./main.py`.
 
 ## Additional Resources
 This [getting started guide](https://docs.mitmproxy.org/stable/overview-getting-started/) might be useful.
