@@ -1,6 +1,8 @@
-import config
 from mitmproxy import http  # type: ignore
 from mitmproxy.http import Response
+
+import config
+
 
 class MyMitmproxy:
     async def request(self, flow: http.HTTPFlow) -> None:
