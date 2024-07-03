@@ -3,6 +3,8 @@ from mitmproxy.http import Response
 
 import config
 
+BASE_URL_FOR_OSU_CLIENT_SERVER = "http://localhost:5001"
+
 
 class MyMitmproxy:
     async def request(self, flow: http.HTTPFlow) -> None:
@@ -10,7 +12,7 @@ class MyMitmproxy:
             subdomain = flow.request.pretty_host.split(".")[0]
             location = flow.request.url.replace(
                 f"https://{subdomain}.{config.TEMPORARY_REDIRECT_DOMAIN}",
-                f"http://localhost:{config.OSU_SERVER_PORT}/{subdomain}",
+                f"{BASE_URL_FOR_OSU_CLIENT_SERVER}/{subdomain}",
             )
 
             flow.response = Response.make(
